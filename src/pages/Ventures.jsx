@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 import { ventureCards } from '../constants'
 import VentureCard from '../components/VentureCard'
 import EpidaurusSection from '../components/EpidaurusSection'
