@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import HeroSection from '../components/HeroSection'
 import About from '../components/About'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 import Contact from '../components/Contact'
 
 const Home = () => {
