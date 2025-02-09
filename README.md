@@ -1,2 +1,3 @@
-# JUSSTWebsite3.0
-Another Version of our Website
+# JUSST Website 3.0
+
+## Another Website for JUSST
