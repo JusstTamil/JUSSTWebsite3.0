@@ -1,8 +1,10 @@
 import React from "react";
 import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 import { heroImg } from "../assets";
+import gsap from "gsap";
 
 const HeroSection = () => {
+  
   return (
     <div className="hero-section-wrapper w-screen h-[90vh]">
       <HeroHighlight containerClassName={"w-full h-full bg-myBlack"}>

@@ -21,11 +21,11 @@ export const navLinks = [
 
 export const footerLinks = [
   {
-    name: "Suscribe to Channel",
+    name: "Suscribe to our Channel",
     link: "https://www.youtube.com/@jusst1523?sub_confirmation=1",
   },
   {
-    name: "Suscribe to Blogs",
+    name: "Suscribe to our Blogs",
     link: "https://jusstblogs.wordpress.com",
   },
   {
@@ -81,7 +81,7 @@ export const ventureCards = [
     subline: 'Wordpress',
     tagline: 'Taking a deeper dive into concepts explained in Videos',
     link: 'https://jusstblogs.wordpress.com',
-    accent: 'sky',
+    accent: '#00749C',
     logo: wordpress
   },
   {
@@ -89,7 +89,7 @@ export const ventureCards = [
     subline: 'Github',
     tagline: 'The Projects that we have created and are working on',
     link: 'https://github.com/JusstTamil/',
-    accent: 'slate',
+    accent: 'gray',
     logo: github
   },
 ]

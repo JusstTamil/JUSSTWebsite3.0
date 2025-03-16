@@ -9,7 +9,7 @@ const ContactPage = () => {
     <React.Fragment>
       <div className="w-screen bg-myBlack">
         <Navbar />
-        <div className="lander-wrapper h-24 mt-14 flex flex-col justify-around items-center">
+        <div className="lander-wrapper h-24 m-14 flex flex-col justify-around items-center">
           <h1 className="font-bold text-3xl md:text-5xl text-white">Contact Us</h1>
           <h3 className="font-semibold text-slate-400 uppercase">Get in touch With us</h3>
         </div>

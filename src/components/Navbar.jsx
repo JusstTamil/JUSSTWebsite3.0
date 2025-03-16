@@ -35,7 +35,7 @@ const Navbar = () => {
             <img
               src="JUSSTChannelProfile.jpg"
               alt="Logo of Institution"
-              className="nav-logo-image h-16 rounded-full"
+              className="nav-logo-image h-12 md:h-16 rounded-full"
             />
             <h1 className="text-4xl font-black uppercase font-roboto md:block hidden">
               Jusst Tamil
@@ -72,14 +72,14 @@ const MobileNavMenu = () => {
         <img
           src={toggle ? menu : close}
           alt={toggle ? "menu icon" : "close icon"}
-          className="w-14"
+          className="w-12"
           onClick={() => setToggle(!toggle)}
         />
       </div>
       <div
         className={`nav-mobile-menu bg-indigo-950 w-full h-60 ${
           toggle ? "hidden" : "block"
-        } absolute top-20 rounded-b-xl z-[99] flex flex-col gap-7 font-semibold px-6 py-5`}
+        } absolute top-18 rounded-b-xl z-[99] flex flex-col gap-7 font-semibold px-6 py-5`}
       >
         {navLinks.map((item) => (
           <a

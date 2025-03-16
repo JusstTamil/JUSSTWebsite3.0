@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -61,26 +61,37 @@ const BlogList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetch(
-      "https://public-api.wordpress.com/rest/v1/sites/jusstblogs.wordpress.com/posts"
-    )
-      .then((response) => {
-        if (!response.ok) {
-          setLoading(false);
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setLoading(false);
-        setBlogs(data.posts);
-      })
-      .catch((error) => {
-        setError(error);
-        console.error("There was a problem with the fetch operation:", error);
-      });
+  const storedBlogs = useMemo(() => {
+    const savedBlogs = localStorage.getItem('blogs');
+    return savedBlogs ? JSON.parse(savedBlogs) : null;
   }, []);
+
+  useEffect(() => {
+    if (storedBlogs) {
+      setBlogs(storedBlogs);
+      setLoading(false);
+    } else {
+      fetch(
+        "https://public-api.wordpress.com/rest/v1/sites/jusstblogs.wordpress.com/posts"
+      )
+        .then((response) => {
+          if (!response.ok) {
+            setLoading(false);
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setLoading(false);
+          setBlogs(data.posts);
+          localStorage.setItem('blogs', JSON.stringify(data.posts));
+        })
+        .catch((error) => {
+          setError(error);
+          console.error("There was a problem with the fetch operation:", error);
+        });
+    }
+  }, [storedBlogs]);
 
   if (loading) {
     return <div className="w-5/6 bg-slate-400 min-h-screen flex justify-center items-center mx-auto m-5"><div className="loader"></div></div>;

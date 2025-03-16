@@ -43,10 +43,6 @@ html {
     100%  {background-position:left 1px bottom 1px,100% 0,0 100%,0 0}
 }
 
-.venture-card-wrapper {
-    box-shadow: 1px 1px 5px 5px rgba(255, 255, 255, 0.5);
-}
-
 .epidaurus-section-cont a {
     @apply text-sky-500 underline hover:text-sky-700  transition-colors
 }

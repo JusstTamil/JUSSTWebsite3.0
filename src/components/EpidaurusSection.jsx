@@ -19,7 +19,7 @@ const EpidaurusSection = () => {
               <div className="download-button-wrapper flex md:w-4/5 w-full justify-evenly items-center h-20 p-5 bg-indigo-500 rounded-xl shadow-md">
                 <img src={epidaurusIco} alt="" className="w-12 rounded-full" />
                 <h3 className="md:text-2xl text-xl font-bold w-28 md:w-auto">Epidaurus for PC</h3>
-                <a href="https://github.com/JusstTamil/Epidaurus/raw/refs/heads/main/Epidaurus-Mark1-setup.exe" className='bg-orange-500 hover:bg-orange-700 transition-colors md:p-3 p-2 rounded-xl' style={{color: 'white'}} download={true}>Download</a>
+                <a href="https://github.com/JusstTamil/Epidaurus/raw/refs/heads/main/Epidaurus-Mark1-setup.exe" className='bg-orange-500 md:p-3 p-2 rounded-xl hover:scale-[1.02] transition-transform' style={{color: 'white'}} download={true}>Download</a>
               </div>
               <p className="epidaurus-content-p">
                 This is an open-source application. You can contribute to the app thourgh <a href="https://github.com/JusstTamil/Epidaurus" target="_blank" rel="noopener noreferrer">Github</a>. We are still improving Epidaurus here at JUSST. To contact us about Epidaurus, you can use the <a href="/contact">Contact Page</a>.

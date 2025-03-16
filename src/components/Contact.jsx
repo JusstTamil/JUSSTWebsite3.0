@@ -77,7 +77,7 @@ export const ContactLinks = () => {
             <a
               href={link.link}
               key={link.name}
-              className="w-64 p-3 rounded-md bg-slate-700 font-semibold hover:bg-slate-800 transition-colors flex gap-7 items-center hover:underline"
+              className="w-64 p-3 rounded-md bg-slate-200 font-semibold hover:bg-slate-300 text-myBlack transition-colors flex gap-7 items-center hover:underline"
             >
               <img src={link.image} className="w-12" alt={`${link.name} icon`} />
               <div className="contact-text-block-text">{link.name}</div>
