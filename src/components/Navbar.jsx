@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { navLinks } from "../constants";
 import { close, menu } from "../assets";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(
@@ -26,7 +28,8 @@ const Navbar = () => {
   return (
     <React.Fragment>
       <nav
-        className={`h-[10vh] flex justify-between items-center w-screen bg-indigo-950`}>
+        className={`h-[10vh] flex justify-between items-center w-screen bg-indigo-950`}
+      >
         <div className="nav-logo flex justify-start items-center px-5 flex-nowrap w-1/3">
           <a
             href="/"
@@ -65,9 +68,24 @@ const BigScreenNavList = () => (
 );
 
 const MobileNavMenu = () => {
+  useGSAP(() => {
+    const pages = gsap.utils.toArray(".nav-mobile-links");
+    pages.forEach((page, index) => {
+      gsap.from(page, {
+        x: 20 * (index + 1),
+        display: "none",
+        duration: 0.5,
+        delay: 0.5,
+        stagger: 0.3
+      });
+    });
+  }, []);
+
+
+
   const [toggle, setToggle] = useState(true);
   return (
-    <div className="nav-mobile-menu-wrapper w-full">
+    <div className="nav-mobile-menu-wrapper w-full overflow-x-hidden">
       <div className="nav-mobile-menu-icon w-full flex justify-end items-center px-6">
         <img
           src={toggle ? menu : close}
@@ -77,7 +95,7 @@ const MobileNavMenu = () => {
         />
       </div>
       <div
-        className={`nav-mobile-menu bg-indigo-950 w-full h-60 ${
+        className={`nav-mobile-menu bg-indigo-950 w-1/2 h-60 ${
           toggle ? "hidden" : "block"
         } absolute top-18 rounded-b-xl z-[99] flex flex-col gap-7 font-semibold px-6 py-5`}
       >

@@ -35,7 +35,7 @@ const About = () => {
       scrollTrigger: {
         trigger: '.paragraph-animator',
         start: 'bottom bottom',
-        end: 'top 70%',
+        end: 'top 60%',
         scrub: true
       },
       ease: 'circ.inOut'
@@ -48,7 +48,7 @@ const About = () => {
       scrollTrigger: {
         trigger: '.about-image-animator',
         start: 'top bottom',
-        end: 'bottom 70%',
+        end: 'bottom 60%',
         scrub: true
       }
     })
@@ -93,7 +93,7 @@ export const Headings = ({ heading, subHeading }) => {
     const titles = gsap.utils.toArray(".headings-animator")
     titles.forEach((title, i) => {
       gsap.fromTo(title, {
-        x: -30*(i*2+1),
+        x: -20*(i*2+1),
         opacity: 0,
         ease: 'circ.in'
       },{
@@ -104,7 +104,7 @@ export const Headings = ({ heading, subHeading }) => {
         scrollTrigger: {
           trigger: title,
           start: 'top bottom',
-          end: 'bottom 70%',
+          end: 'bottom 60%',
           scrub: true
         }
       })
