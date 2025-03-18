@@ -89,7 +89,7 @@ export const ventureCards = [
     subline: 'Github',
     tagline: 'The Projects that we have created and are working on',
     link: 'https://github.com/JusstTamil/',
-    accent: 'gray',
+    accent: 'slategray',
     logo: github
   },
 ]

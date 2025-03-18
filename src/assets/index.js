@@ -14,6 +14,7 @@ import coding from './web-development.png'
 import blogging from './copywriter.png'
 import epidaurusIco from './Epidaurus.ico'
 import appSec from './undraw_apps_re_ienc.svg'
+import UJP from './UJP.png'
 
 export {
     menu,
@@ -31,5 +32,6 @@ export {
     coding,
     blogging,
     epidaurusIco,
-    appSec
+    appSec,
+    UJP
 }

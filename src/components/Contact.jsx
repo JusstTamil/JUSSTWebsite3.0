@@ -24,8 +24,7 @@ export const ContactForm = () => {
         scrollTrigger: {
           trigger: element,
           start: 'bottom bottom',
-          end: 'bottom 80%',
-          scrub: 1
+          end: 'bottom 80%'
         },
         x: 30*(i+1),
         opacity: 0,
@@ -102,8 +101,7 @@ export const ContactLinks = () => {
         scrollTrigger: {
           trigger: link,
           start: 'bottom bottom',
-          end: 'top 80%',
-          scrub: 1
+          end: 'top 80%'
         },
         x: -20 * i+1,
         opacity: 0,
@@ -115,8 +113,7 @@ export const ContactLinks = () => {
       scrollTrigger: {
         trigger: '.links-heading-animator',
         start: 'bottom bottom',
-        end: 'top 70%',
-        scrub: 1
+        end: 'top 70%'
       },
       y: -30,
       opacity: 0,
