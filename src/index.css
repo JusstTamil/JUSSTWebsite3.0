@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 html {
+    width: 100vw;
     scroll-behavior: smooth;
     overflow-x: hidden;
     color-scheme: dark;

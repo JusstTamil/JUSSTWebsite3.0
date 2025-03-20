@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <React.Fragment>
       <nav
-        className={`h-[10vh] flex justify-between items-center w-screen bg-indigo-950`}
+        className={`h-[10vh] flex justify-between items-center w-screen overflow-hidden bg-indigo-950`}
       >
         <div className="nav-logo flex justify-start items-center px-5 flex-nowrap w-1/3">
           <a
@@ -79,6 +79,12 @@ const MobileNavMenu = () => {
         stagger: 0.3
       });
     });
+    gsap.to('.mobile-menu-animator', {
+      opacity: 1,
+      right: 0,
+      ease: 'circ.inOut',
+      duration: 0.8
+    })
   }, []);
 
 
@@ -96,8 +102,8 @@ const MobileNavMenu = () => {
       </div>
       <div
         className={`nav-mobile-menu bg-indigo-950 w-1/2 h-60 ${
-          toggle ? "hidden" : "block"
-        } absolute top-18 rounded-b-xl z-[99] flex flex-col gap-7 font-semibold px-6 py-5`}
+          toggle ? "-right-96 opacity-0" : "mobile-menu-animator"
+        } absolute top-18 rounded-b-xl z-[99] flex flex-col gap-7 font-semibold px-6 py-5 transition-transform`}
       >
         {navLinks.map((item) => (
           <a
