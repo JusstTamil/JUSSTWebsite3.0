@@ -1,0 +1,4 @@
+User-agent: Googlebot
+User-agent: Google-Read-Aloud
+Allow: /
+Sitemap: https://jusst.netlify.app/sitemap.xml
