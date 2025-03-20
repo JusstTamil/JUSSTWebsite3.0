@@ -45,7 +45,7 @@ export const ContactForm = () => {
   }, [])
   return (
     <React.Fragment>
-      <form className="md:w-1/2 w-4/5 h-full flex flex-col justify-around items-center" action="https://formsubmit.co/fb66386f161a177f3458cb01bfc3b521" method="POST">
+      <form className="md:w-1/2 w-4/5 h-full flex flex-col justify-around items-center" action="https://formsubmit.co/jusst2023@gmail.com" method="POST">
         {/* <input type="hidden" name="_next" value="/thanks" /> */}
         <div className="contact-form-element">
           <label htmlFor="Name">
