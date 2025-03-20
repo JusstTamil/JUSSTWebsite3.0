@@ -56,3 +56,7 @@ html {
     border: 2px;
     border-image: linear-gradient(135deg, hotpink, purple);
 }
+
+.tilde-styler {
+    @apply text-4xl font-black
+}

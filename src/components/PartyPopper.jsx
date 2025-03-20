@@ -15,7 +15,8 @@ const PartyPopper = () => {
   return (
     <React.Fragment>
         <div>
-          <div className="md:w-1/3 mx-auto w-full flex justify-center items-center gap-5">
+          <div className="md:w-2/3 mx-auto w-full flex justify-center items-center gap-5">
+          <a href='/' className="p-3 bg-white font-bold text-myBlack rounded-xl text-nowrap">🏠 Home</a>
               <button onClick={() => setConfettiVisible(true)} className='p-3 bg-white font-bold text-myBlack rounded-xl text-nowrap'>🎉 Celebrate 🎉</button>
               {isConfettiVisible && <button className='bg-slate-600 opacity-40 hover:opacity-80 transition-opacity p-3 rounded-xl font-noraml font-sans capitalize' onClick={() => setConfettiVisible(!isConfettiVisible)}>toggle</button>}
           </div>

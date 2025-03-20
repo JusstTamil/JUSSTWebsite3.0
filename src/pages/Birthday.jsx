@@ -13,7 +13,7 @@ const Birthday = () => {
     const month = d.getMonth() + 1;
     const year = d.getFullYear();
 
-    if (date == 22 && month == 3) {
+  if (date == 22 && month == 3) {
       setName("UJP");
       setAge(year - 2007);
       setImage(UJP);
@@ -26,11 +26,12 @@ const Birthday = () => {
       setName("Sankar");
       setAge(year - 2006);
       document.title = 'Happy Birthday Sankar ~ JUSST'
-    } else {
-        document.title = "Error ~ B'Day Not Today"
-        return ErrorComponent()
     }
   }, []);
+
+  if (name === "second") {
+    return <ErrorComponent />
+  }
 
   return (
     <React.Fragment>
@@ -48,7 +49,17 @@ const Birthday = () => {
 
 const ErrorComponent = () => {
     return (
-        <h1 className="">Please Try again later</h1>
+        <div className="error-component-cont w-screen h-screen bg-myBlack font-playwrite overflow-hidden flex flex-col justify-center items-center gap-20">
+          <div className="flex justify-center items-center gap-10">
+            <div className="tilde-styler">~</div>
+            <div className=" flex justify-center items-center flex-col gap-10 w-fit">
+              <h1 className="text-4xl font-bold">No Birthdays Today</h1>
+              <h2 className="text-2xl font-medium">Please Try again later</h2>
+            </div>
+            <div className="tilde-styler">~</div>
+          </div>
+          <a href="/" className="bg-sky-500 p-3 rounded-xl">🏠 Home</a>
+        </div>
     )
 }
 
