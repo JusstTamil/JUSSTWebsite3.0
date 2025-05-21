@@ -21,11 +21,11 @@ export const navLinks = [
 
 export const footerLinks = [
   {
-    name: "Suscribe to our Channel",
+    name: "Subscribe to our Channel",
     link: "https://www.youtube.com/@jusst1523?sub_confirmation=1",
   },
   {
-    name: "Suscribe to our Blogs",
+    name: "Subscribe to our Blogs",
     link: "https://jusstblogs.wordpress.com",
   },
   {
