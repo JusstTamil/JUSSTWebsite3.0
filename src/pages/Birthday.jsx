@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { UJP } from "../assets";
+import { Jayanathan, JUSSTBday, UJP } from "../assets";
 import PartyPopper from "../components/PartyPopper";
 
 const Birthday = () => {
   const [name, setName] = useState("second");
   const [age, setAge] = useState(18);
-  const [image, setImage] = useState("second");
+  const [image, setImage] = useState(JUSSTBday);
 
   useEffect(() => {
     const d = new Date();
@@ -21,6 +21,7 @@ const Birthday = () => {
     } else if (date == 15 && month == 2) {
       setName("Jayananthan");
       setAge(year - 2007);
+      setImage(Jayanathan)
       document.title = 'Happy Birthday Jayananthan ~ JUSST'
     } else if (date == 7 && month == 7) {
       setName("Sankar");
@@ -36,7 +37,7 @@ const Birthday = () => {
   return (
     <React.Fragment>
       <div className="w-screen h-screen bg-myBlack font-playwrite overflow-hidden flex justify-center items-center flex-col gap-3">
-        <h1 className="w-4/5 text-4xl md:text-5xl text-white capitalize font-bold text-center leading-loose">
+        <h1 className="w-4/5 md:w-full text-4xl md:text-5xl text-white capitalize font-bold text-center leading-loose">
           Many More Happy returns of the day {name}
         </h1>
         <h2 className="font-roboto text-3xl font-semibold pt-10">🎂 Happy {age} 🎂</h2>
@@ -50,10 +51,10 @@ const Birthday = () => {
 const ErrorComponent = () => {
     return (
         <div className="error-component-cont w-screen h-screen bg-myBlack font-playwrite overflow-hidden flex flex-col justify-center items-center gap-20">
-          <div className="flex justify-center items-center gap-10">
+          <div className="flex justify-center items-center gap-10 w-full">
             <div className="tilde-styler">~</div>
             <div className=" flex justify-center items-center flex-col gap-10 w-fit">
-              <h1 className="text-4xl font-bold">No Birthdays Today</h1>
+              <h1 className="text-4xl font-bold text-wrap text-center leading-loose">No Birthdays Today</h1>
               <h2 className="text-2xl font-medium">Please Try again later</h2>
             </div>
             <div className="tilde-styler">~</div>

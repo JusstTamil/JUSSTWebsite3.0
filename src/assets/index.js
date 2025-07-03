@@ -15,6 +15,8 @@ import blogging from './copywriter.png'
 import epidaurusIco from './Epidaurus.ico'
 import appSec from './undraw_apps_re_ienc.svg'
 import UJP from './UJP.png'
+import Jayanathan from './Jayananthan-BDay.jpg'
+import JUSSTBday from './JUSST-Bday.jpg'
 
 export {
     menu,
@@ -33,5 +35,7 @@ export {
     blogging,
     epidaurusIco,
     appSec,
-    UJP
+    UJP,
+    Jayanathan,
+    JUSSTBday
 }
