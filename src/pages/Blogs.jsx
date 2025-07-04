@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -61,14 +61,25 @@ const BlogList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const storedBlogs = useMemo(() => {
-    const savedBlogs = localStorage.getItem('blogs');
-    return savedBlogs ? JSON.parse(savedBlogs) : null;
-  }, []);
+  // Helper to check if cached data is fresh (less than 1 day old)
+  const getStoredBlogs = () => {
+    const saved = localStorage.getItem('blogsWithTimestamp');
+    if (!saved) return null;
+    try {
+      const { blogs, timestamp } = JSON.parse(saved);
+      if (Date.now() - timestamp < 24 * 60 * 60 * 1000) {
+        return blogs;
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  };
 
   useEffect(() => {
-    if (storedBlogs) {
-      setBlogs(storedBlogs);
+    const cachedBlogs = getStoredBlogs();
+    if (cachedBlogs) {
+      setBlogs(cachedBlogs);
       setLoading(false);
     } else {
       fetch(
@@ -84,14 +95,17 @@ const BlogList = () => {
         .then((data) => {
           setLoading(false);
           setBlogs(data.posts);
-          localStorage.setItem('blogs', JSON.stringify(data.posts));
+          localStorage.setItem(
+            'blogsWithTimestamp',
+            JSON.stringify({ blogs: data.posts, timestamp: Date.now() })
+          );
         })
         .catch((error) => {
           setError(error);
           console.error("There was a problem with the fetch operation:", error);
         });
     }
-  }, [storedBlogs]);
+  }, []);
 
   if (loading) {
     return <div className="w-5/6 bg-slate-400 min-h-screen flex justify-center items-center mx-auto m-5"><div className="loader"></div></div>;
