@@ -5,6 +5,7 @@ import Blogs from './pages/Blogs'
 import Ventures from './pages/Ventures'
 import ContactPage from './pages/ContactPage'
 import Birthday from './pages/Birthday'
+import Thanks from './pages/Thanks'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path='/ventures' element={<Ventures />} />
           <Route path='/contact' element={<ContactPage />} />
           <Route path='/birthday' element={<Birthday />} />
+          <Route path='/thank-you' element={<Thanks />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>

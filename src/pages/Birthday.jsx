@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Jayanathan, JUSSTBday, UJP } from "../assets";
+import { Jayanathan, Sankar, UJP } from "../assets";
 import PartyPopper from "../components/PartyPopper";
 
 const Birthday = () => {
   const [name, setName] = useState("second");
   const [age, setAge] = useState(18);
-  const [image, setImage] = useState(JUSSTBday);
+  const [image, setImage] = useState("second");
 
   useEffect(() => {
     const d = new Date();
@@ -26,6 +26,7 @@ const Birthday = () => {
     } else if (date == 7 && month == 7) {
       setName("Sankar");
       setAge(year - 2006);
+      setImage(Sankar);
       document.title = 'Happy Birthday Sankar ~ JUSST'
     }
   }, []);

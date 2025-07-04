@@ -46,7 +46,7 @@ export const ContactForm = () => {
   return (
     <React.Fragment>
       <form className="md:w-1/2 w-4/5 h-full flex flex-col justify-around items-center" action="https://formsubmit.co/jusst2023@gmail.com" method="POST">
-        {/* <input type="hidden" name="_next" value="/thanks" /> */}
+        <input type="hidden" name="_next" value="https://jusst.netlify.app/thank-you" />
         <div className="contact-form-element">
           <label htmlFor="Name">
             Your Name<span className="text-red-600 font-semibold">*</span>

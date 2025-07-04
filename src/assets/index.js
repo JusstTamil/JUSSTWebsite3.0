@@ -16,7 +16,7 @@ import epidaurusIco from './Epidaurus.ico'
 import appSec from './undraw_apps_re_ienc.svg'
 import UJP from './UJP.png'
 import Jayanathan from './Jayananthan-BDay.jpg'
-import JUSSTBday from './JUSST-Bday.jpg'
+import Sankar from './Sankar-BDay.jpg'
 
 export {
     menu,
@@ -37,5 +37,5 @@ export {
     appSec,
     UJP,
     Jayanathan,
-    JUSSTBday
+    Sankar
 }
