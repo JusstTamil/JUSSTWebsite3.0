@@ -38,10 +38,10 @@ const Birthday = () => {
   return (
     <React.Fragment>
       <div className="w-screen h-screen bg-myBlack font-playwrite overflow-hidden flex justify-center items-center flex-col gap-3">
-        <h1 className="w-4/5 md:w-full text-4xl md:text-5xl text-white capitalize font-bold text-center leading-loose">
+        <h1 className="w-4/5 md:w-full text-3xl md:text-5xl text-white capitalize font-bold text-center leading-loose">
           Many More Happy returns of the day {name}
         </h1>
-        <h2 className="font-roboto text-3xl font-semibold pt-10">🎂 Happy {age} 🎂</h2>
+        <h2 className="font-roboto text-xl md:text-3xl font-semibold pt-10">🎂 Happy {age} 🎂</h2>
         <img src={image} alt="" className="w-72" />
         <PartyPopper />
       </div>
