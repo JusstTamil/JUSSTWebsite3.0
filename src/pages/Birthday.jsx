@@ -42,7 +42,7 @@ const Birthday = () => {
           Many More Happy returns of the day {name}
         </h1>
         <h2 className="font-roboto text-3xl font-semibold pt-10">🎂 Happy {age} 🎂</h2>
-        <img src={image} alt="" className="w-96" />
+        <img src={image} alt="" className="w-72" />
         <PartyPopper />
       </div>
     </React.Fragment>
