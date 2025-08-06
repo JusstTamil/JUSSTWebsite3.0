@@ -58,7 +58,7 @@ export const footerContactLinks = [
   {
     image: whatsapp,
     name: "WhatsApp Channel",
-    link: "https://whatsapp.com/channel/0029Vazstov6BIEdv9uBO33d",
+    link: "https://whatsapp.com/channel/0029VaZstov6BIEdv9uBO33d",
   },
   {
     image: forms,
@@ -108,4 +108,5 @@ export const glareCards = [
     title: 'Hobby Coders'
   }
 ]
+
 
