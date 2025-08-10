@@ -6,6 +6,7 @@ import Ventures from './pages/Ventures'
 import ContactPage from './pages/ContactPage'
 import Birthday from './pages/Birthday'
 import Thanks from './pages/Thanks'
+import Videos from './pages/Videos'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/blogs' element={<Blogs />} />
+          <Route path='/videos' element={<Videos />} />
           <Route path='/ventures' element={<Ventures />} />
           <Route path='/contact' element={<ContactPage />} />
           <Route path='/birthday' element={<Birthday />} />

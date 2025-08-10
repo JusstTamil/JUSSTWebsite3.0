@@ -63,7 +63,7 @@ const BlogList = () => {
 
   // Helper to check if cached data is fresh (less than 1 day old)
   const getStoredBlogs = () => {
-    const saved = localStorage.getItem('blogsWithTimestamp');
+    const saved = localStorage.getItem('JUSSTBlogs');
     if (!saved) return null;
     try {
       const { blogs, timestamp } = JSON.parse(saved);
@@ -96,7 +96,7 @@ const BlogList = () => {
           setLoading(false);
           setBlogs(data.posts);
           localStorage.setItem(
-            'blogsWithTimestamp',
+            'JUSSTBlogs',
             JSON.stringify({ blogs: data.posts, timestamp: Date.now() })
           );
         })
@@ -108,7 +108,7 @@ const BlogList = () => {
   }, []);
 
   if (loading) {
-    return <div className="w-5/6 bg-slate-400 min-h-screen flex justify-center items-center mx-auto m-5"><div className="loader"></div></div>;
+    return <div className="w-5/6 bg-blue-900 min-h-screen flex justify-center items-center mx-auto m-5"><div className="loader"></div></div>;
   }
 
   if (error) {

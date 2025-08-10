@@ -101,7 +101,7 @@ const MobileNavMenu = () => {
         />
       </div>
       <div
-        className={`nav-mobile-menu bg-indigo-950 w-1/2 h-60 ${
+        className={`nav-mobile-menu bg-indigo-950 w-1/2 h-auto ${
           toggle ? "-right-96 opacity-0" : "mobile-menu-animator"
         } absolute top-18 rounded-b-xl z-[99] flex flex-col gap-7 font-semibold px-6 py-5 transition-transform`}
       >
