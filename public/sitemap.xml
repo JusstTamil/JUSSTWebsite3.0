@@ -17,11 +17,15 @@
 </url>
 
 <url>
-  <loc>https://jusst.netlify.app/contact</loc>
+  <loc>https://jusst.netlify.app/videos</loc>
 </url>
 
 <url>
   <loc>https://jusst.netlify.app/blogs</loc>
+</url>
+
+<url>
+  <loc>https://jusst.netlify.app/contact</loc>
 </url>
       
 </urlset>
