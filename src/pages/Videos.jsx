@@ -100,7 +100,8 @@ const VideoList = () => {
                     );
                 })
                 .catch((error) => {
-                    setError(error);
+                    // setError(error);
+                    setVideoList(trialVideoList);
                     console.error(
                         "There was a problem with the fetch operation:",
                         error
@@ -136,7 +137,7 @@ const VideoCard = ({ video }) => {
     return (
         <React.Fragment>
             <div
-                className={`w-full h-[50vh] md:w-96 border-2 md:h-[70vh] bg-black rounded-lg overflow-hidden ${
+                className={`w-full h-[60vh] md:w-96 border-2 md:h-[70vh] bg-black rounded-lg overflow-hidden ${
                     video.uploadTime ? "border-blue-500" : "border-yellow-500"
                 }`}
             >
