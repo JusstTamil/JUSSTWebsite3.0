@@ -29,11 +29,11 @@ const Ventures = () => {
     <React.Fragment>
       <div className="bg-myBlack">
         <Navbar />
-        <div className="lander-wrapper h-24 m-14 flex flex-col justify-around items-center">
+        <div className="lander-wrapper h-20 mt-14 flex flex-col justify-around items-center gap-5">
           <h1 className="font-bold text-3xl md:text-5xl text-white">Our Ventures</h1>
           <h3 className="font-semibold text-slate-400 uppercase">Know where to find us</h3>
         </div>
-        <div className="ventures-cont min-h-[90vh] flex flex-wrap flex-col md:flex-row justify-around items-center w-full mx-auto gap-10 p-5">
+        <div className="ventures-cont min-h-[90vh] w-4/5 md:w-5/6 my-10 md:my-0 flex flex-wrap flex-col md:flex-row justify-around items-center mx-auto gap-10">
           {ventureCards.map((card) => (
             <div className="venture-card-animator flex justify-center items-center" key={card.name}>
               <VentureCard {...card} />

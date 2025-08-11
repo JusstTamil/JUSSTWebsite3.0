@@ -55,7 +55,7 @@ const About = () => {
   }, []);
   return (
     <div id="about" className="w-screen min-h-screen">
-      <Headings heading="About" subHeading="Know Us" />
+      <Headings heading="About" subHeading="Get to Know Us" />
       <div className="about-content-wrapper flex justify-around items-center md:w-4/5 w-full py-1 mx-auto flex-col-reverse md:flex-row">
         <div className="about-context-text flex justify-center items-center flex-col gap-5 text-xl font-medium font-roboto dark:text-white w-4/5 md:w-1/3 text-center">
           <p className="paragraph-animator">
@@ -105,13 +105,12 @@ export const Headings = ({ heading, subHeading }) => {
           trigger: title,
           start: 'top bottom',
           end: 'bottom 60%',
-          scrub: true
         }
       })
     })
   }, []);
   return (
-    <div className="headings-wrapper p-2 w-full">
+    <div className="headings-wrapper p-2 w-full mx-2">
       <h3 className="headings-animator font-semibold text-slate-400 uppercase">
         {subHeading}
       </h3>

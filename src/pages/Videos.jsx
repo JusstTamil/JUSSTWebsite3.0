@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import { trialVideoList } from "../constants";
 import Footer from "../components/Footer";
 
 const Videos = () => {
@@ -39,9 +38,9 @@ const VideosLander = () => {
                         JUSST Tamil
                     </h1>
                     <h2 className="text-xl font-medium text-myWhite">
-                        Learn complex concepts, made easy with our lectures and
+                        Learn complex concepts, made easy with our Video Lectures
                         <br />
-                        Gain Greater Understanding of key concepts ; )
+                        Explanations that make learning easy and joyful ; )
                     </h2>
                 </div>
                 <a
@@ -78,12 +77,9 @@ const VideoList = () => {
         const cachedvideos = getStoredVideos();
         if (cachedvideos) {
             setVideoList(cachedvideos);
-            console.log(cachedvideos);
             setLoading(false);
         } else {
-            fetch(
-                "https://yt-channel-videos-scraper.onrender.com/api/videos"
-            )
+            fetch(import.meta.env.VITE_GET_CHANNEL_VIDEOS_API_URL)
                 .then((response) => {
                     if (!response.ok) {
                         setLoading(false);
@@ -93,15 +89,17 @@ const VideoList = () => {
                 })
                 .then((data) => {
                     setLoading(false);
-                    setVideoList(data);
+                    setVideoList(data.items);
                     localStorage.setItem(
                         "videos",
-                        JSON.stringify({ videos: data, timestamp: Date.now() })
+                        JSON.stringify({
+                            videos: data.items,
+                            timestamp: Date.now(),
+                        })
                     );
                 })
                 .catch((error) => {
-                    // setError(error);
-                    setVideoList(trialVideoList);
+                    setError(error);
                     console.error(
                         "There was a problem with the fetch operation:",
                         error
@@ -126,7 +124,7 @@ const VideoList = () => {
         <React.Fragment>
             <div className="blogListWrapper flex flex-row flex-wrap w-5/6 mx-auto gap-10 justify-around items-center p-5 mb-5">
                 {videoList.map((video) => (
-                    <VideoCard key={video.title} video={video} />
+                    <VideoCard key={video.id} video={video} />
                 ))}
             </div>
         </React.Fragment>
@@ -134,62 +132,81 @@ const VideoList = () => {
 };
 
 const VideoCard = ({ video }) => {
+    let vidTitle = video.snippet.title;
+    let upload = new Date(video.snippet.publishedAt);
+
+    
+    const day = upload.getDate().toString().padStart(2, '0');       // "11"
+    const month = (upload.getMonth() + 1).toString().padStart(2, '0'); // "08"
+    const year = upload.getFullYear();                              // 2025
+
+    const uploadDate = `${day}/${month}/${year}`;
+
+    let videoId = video.snippet.resourceId.videoId
+    let imageUrl = `https://i.ytimg.com/vi/${videoId}/sddefault.jpg`;
+    let videoUrl = `https://www.youtube.com/watch?v=${videoId}`
+
+    let vidTitleArray = vidTitle.split(" | ");
+    let title = vidTitleArray[0];
+    let creator = vidTitleArray[vidTitleArray.length - 1];
+    let batch = vidTitleArray[1];
+    let subject = vidTitleArray[2];
     return (
         <React.Fragment>
             <div
-                className={`w-full h-[60vh] md:w-96 border-2 md:h-[70vh] bg-black rounded-lg overflow-hidden ${
-                    video.uploadTime ? "border-blue-500" : "border-yellow-500"
-                }`}
+                className={`w-full min-h-[25rem] md:w-96 border-2 md:h-[30rem] bg-black rounded-lg overflow-hidden ${
+                    uploadDate ? "border-blue-500" : "border-yellow-500"
+                } hover:bg-gray-900`}
             >
                 <a
-                    href={video.url}
+                    href={videoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-col justify-evenly items-center h-full w-full"
                 >
-                    <div className="img-wrapper overflow-hidden rounded-lg w-full h-1/2 -translate-y-8 md:-translate-y-9">
+                    <div className="img-wrapper overflow-hidden rounded-lg rounded-b-none w-full h-1/2 -translate-y-8 md:-translate-y-9">
                         <img
-                            src={video.image}
+                            src={imageUrl}
                             alt="Video Thumbnail"
                             className="w-full"
                         />
                     </div>
                     <div className="text-wrapper flex flex-col justify-evenly gap-3 items-center text-center w-full h-1/2 pb-3">
                         <h4
-                            className={`font-semibold text-2xl w-5/6 ${
-                                video.uploadTime
+                            className={`font-semibold text-2xl w-11/12 md:w-5/6 ${
+                                uploadDate
                                     ? "text-blue-500"
                                     : "text-yellow-500"
                             }`}
                         >
-                            {video.title}
+                            {title}
                         </h4>
                         <p className="">
                             By{" "}
                             <span
                                 className={`bg-opacity-45 px-2 py-1 rounded-lg ${
-                                    video.uploadTime
+                                    uploadDate
                                         ? "text-blue-50 bg-blue-700"
                                         : "text-yellow-50 bg-yellow-700"
                                 }`}
                             >
-                                {video.creator}
+                                {creator}
                             </span>
                         </p>
-                        <p className="">Part of {video.batch}</p>
+                        <p className="">Part of {batch}</p>
                         <p
                             className={`bg-opacity-45 px-2 py-1 rounded-lg ${
-                                video.uploadTime
+                                uploadDate
                                     ? "text-blue-50 bg-blue-700"
                                     : "text-yellow-50 bg-yellow-700"
                             }`}
                         >
-                            {video.subject == "Chem"
+                            {subject == "Chem"
                                 ? "Chemistry"
-                                : video.subject}
+                                : subject}
                         </p>
-                        {video.uploadTime ? (
-                            <p className="">Uploaded {video.uploadTime}</p>
+                        {uploadDate ? (
+                            <p className="">Uploaded on {uploadDate}</p>
                         ) : (
                             <p className="text-yellow-50 bg-yellow-700 bg-opacity-45 px-2 py-1 rounded-lg font-medium">
                                 Upcoming Video. Tune In

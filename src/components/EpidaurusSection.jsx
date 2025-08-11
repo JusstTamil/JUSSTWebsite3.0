@@ -1,48 +1,9 @@
 import React from 'react'
 import { Headings } from './About'
-import { appSec, epidaurusIco, menu } from '../assets'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
+import { appSec, epidaurusIco } from '../assets'
 
 
 const EpidaurusSection = () => {
-  useGSAP(() => {
-    const paragraphs = gsap.utils.toArray(".epidaurus-content-p")
-    paragraphs.forEach((para, index) => {
-      gsap.from(para, {
-        scrollTrigger: {
-          trigger: para,
-          start: "bottom bottom",
-          end: "top 60%",
-          scrub: 1
-        },
-        opacity: 0,
-        y: -50,
-        duration: 1,
-        delay: index * 0.5
-      })
-    })
-    gsap.from('.left', {
-      x: -30,
-      duration: 0.8,
-      opacity: 0,
-      scrollTrigger: {
-        trigger : '.left',
-        start: "bottom bottom",
-        end: "top 50%",
-        scrub: 1
-      }
-    })
-    gsap.from('.download-button-wrapper', {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: '.download-button-wrapper',
-        start: 'bottom bottom', 
-        end: 'top 60%',
-        scrub: 1
-      }
-    })
-  }, [])
   return (
     <React.Fragment>
         <div className="epidaurus-section-cont w-screen mb-5">

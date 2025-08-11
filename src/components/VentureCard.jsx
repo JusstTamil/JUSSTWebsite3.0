@@ -3,7 +3,7 @@ import React from 'react'
 const VentureCard = ({name, subline, tagline, link, accent, logo}) => {
   return (
     <React.Fragment>
-        <div className="venture-card-wrapper w-4/5 min-w-80 max-w-96 md:w-1/4 h-[26rem] p-3 flex flex-col justify-around items-center text-center rounded-xl bg-myWhite">
+        <div className="venture-card-wrapper min-w-80 max-w-96 md:w-1/4 h-[26rem] p-3 flex flex-col justify-around items-center text-center rounded-xl bg-myWhite">
           <div className={`venture-card-cont w-5/6 border-4 rounded-lg h-[85%] flex flex-col justify-around items-center dark:bg-myBlack`} style={{borderColor: accent}}>
             <div className={`venture-card-image w-28 h-28 mt-4 rounded-full`}>
               <img src={logo} alt="A logo of the platform we use." className="" />

@@ -30,7 +30,7 @@ const Navbar = () => {
       <nav
         className={`h-[10vh] flex justify-between items-center w-screen overflow-hidden bg-indigo-950`}
       >
-        <div className="nav-logo flex justify-start items-center px-5 flex-nowrap w-1/3">
+        <div className="nav-logo flex justify-start items-center px-5 flex-nowrap w-1/3 lg:w-fit">
           <a
             href="/"
             className="logo-link w-full flex flex-row gap-7 justify-start items-center"
@@ -45,7 +45,7 @@ const Navbar = () => {
             </h1>
           </a>
         </div>
-        <div className={`nav-text w-1/2 font-roboto font-semibold text-lg`}>
+        <div className={`nav-text w-1/2 lg:w-2/5 lg:me-5 font-roboto font-semibold text-lg`}>
           {windowWidth ? <BigScreenNavList /> : <MobileNavMenu />}
         </div>
       </nav>
@@ -59,7 +59,7 @@ const BigScreenNavList = () => (
       <a
         href={item.link}
         key={item.name}
-        className="nav-text-link hover:underline hover:-translate-y-1 transition-transform"
+        className="nav-text-link border-b-2 border-indigo-950 hover:border-indigo-700 py-1 transition-colors"
       >
         {item.name}
       </a>
