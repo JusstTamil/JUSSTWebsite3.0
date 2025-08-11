@@ -10,10 +10,6 @@ export const navLinks = [
     link: "/ventures",
   },
   {
-    name: "Videos",
-    link: "/videos"
-  },
-  {
     name: "Blogs",
     link: "/blogs",
   },
@@ -279,4 +275,5 @@ export const trialVideoList = [
     "views": "59",
     "uploadTime": "6 days ago"
   }
+
 ]
