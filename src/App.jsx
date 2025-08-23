@@ -7,6 +7,7 @@ import ContactPage from './pages/ContactPage'
 import Birthday from './pages/Birthday'
 import Thanks from './pages/Thanks'
 import Videos from './pages/Videos'
+import YTTagGen from './pages/YTTagGen'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/contact' element={<ContactPage />} />
           <Route path='/birthday' element={<Birthday />} />
           <Route path='/thank-you' element={<Thanks />} />
+          <Route path='/yt-tags' element={<YTTagGen />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>
